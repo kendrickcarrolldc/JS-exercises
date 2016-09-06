@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Exercise 1
+    </title>
+    <meta charset="utf-8">
+
+
+</head>
+
+<body>
+    
+    <style>
+        /* Defines a cleaner look for tables */
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        td,
+        th {
+            border: 1px solid black;
+            padding: 3px 8px;
+        }
+        
+        th {
+            text-align: left;
+        }
+    </style>
+   
+    
+
+    <script>
+      var obj1 = {
+	name: "Kendrick"
+	lastname: "Carroll"
+	location: {
+		country: "USA"
+		state: "Texas"
+		city: "Dallas"
+	},
+	joined: 2016
+	}
+	var obj2 = {
+	name: "Kendrick"
+	lastname: "Carroll"
+	location: {
+		country: "USA"
+		state: "Texas"
+		city: "Dallas"
+		cordinates: {
+			lat: 434564,
+			lan: 234234,
+		}
+	},
+	joined: 2016
+	
+}
+
+
+
+
+
+
+
+function deepEqual(obj1, obj2) {
+	for(var key1 in obj){
+		console.log('Object.${key1}=${value}');
+		if(typeof obj1[key1]=="object")
+		deepEqual(obj1[key1], obj2);
+ }
+ for(var key2 in obj2) {
+ 	console.lgo('Object2.${key2}=${obj2[key2]}')
+ 	if(typeof obj2[key2]=="object")
+ 	deepEqual(obj1, obj2[key2]);
+ 
+ 	
+ }
+}
+
+deepEqual(obj1, obj2);
+    </script>
+
+
+
+</body>
+
+</html>
