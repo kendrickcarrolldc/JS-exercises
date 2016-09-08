@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Chapter 12 Ex
+    </title>
+    <meta charset="utf-8">
+
+
+</head>
+
+<body>
+
+    <div id=’a’ class=’square’ style="background-color: red;" val=’something important’>
+        ahgoagnoawnfklsngalkbnkn
+    </div>
+    <p id=’newP’ class=’square’ carl=’import’>
+    </p>
+
+    
+    
+    <script type="text/javascript">
+        // // Ex 
+
+        
+//function assert(value, desc) {
+//  var resultsList = document.getElementById("results");
+//  if (!resultsList) {
+//    resultsList = document.createElement('ul');
+//    document.getElementsByTagName('body')[0].appendChild(resultsList);
+//    resultsList.setAttribute('id','results');
+  
+        
+         function printAttr(e,attr) {
+             for (var i = 0; i < attr.length; i++) {
+                 console.log(e.getAttribute(attr[i]));
+             }
+                 
+//            e.getAttribute(e)
+            
+
+         console.log(attr)   
+
+        }
+        var div = document.getElementsByTagName('div')[0];
+        printAttr(div,['id','class','style']);
+    
+    </script>
+
+
+
+   
+
+
+</body>
+
+</html>
