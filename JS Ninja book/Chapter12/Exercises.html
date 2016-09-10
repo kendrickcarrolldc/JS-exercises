@@ -16,7 +16,7 @@
     </div>
     <p id=’newP’ class=’square’ carl=’import’>
     </p>
-
+<button>Click Me</button>
     
     
     <script type="text/javascript">
@@ -31,20 +31,27 @@
 //    resultsList.setAttribute('id','results');
   
         
-         function printAttr(e,attr) {
-             for (var i = 0; i < attr.length; i++) {
-                 console.log(e.getAttribute(attr[i]));
-             }
-                 
-//            e.getAttribute(e)
-            
-
-         console.log(attr)   
-
-        }
-        var div = document.getElementsByTagName('div')[0];
-        printAttr(div,['id','class','style']);
-    
+//         function printAttr(e,attr) {
+//             for (var i = 0; i < attr.length; i++) {
+//                 console.log(e.getAttribute(attr[i]));
+//             }
+//                 
+////            e.getAttribute(e)
+//            
+//
+//         console.log(attr)   
+//
+//        }
+//        var div = document.getElementsByTagName('div')[0];
+//        printAttr(div,['id','class','style']);
+//    
+//        
+    var btn = document.getElementsByTagName('button');
+     
+        
+        btn.onclick = function (){
+            console.log("I have been clicked")
+        };
     </script>
 
 

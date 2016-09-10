@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Chapter 12 Ex
+    </title>
+    <meta charset="utf-8">
+
+
+</head>
+
+<body>
+
+    <div id=’a’ class=’square’ style="background-color: red;" val=’something important’>
+        ahgoagnoawnfklsngalkbnkn
+    </div>
+    <p id=’newP’ class=’square’ carl=’import’>
+    </p>
+    <button>Click Me</button>
+
+
+    <script type="text/javascript">
+        // Ex 1
+        function mul(a, b) {
+            return (a * b).toString(13)
+        }
+        mul(9, 6)
+
+        // Ex 2
+        function add() {
+            var total = 0;
+
+            for (var i = 0; i < arguments.length; i++) {
+                total = total + arguments[i];
+
+            }
+            return total
+
+        }
+
+        add(3, 3, 3);
+        // Ex 3
+            //WORK IN PROGRESS
+        // Ex 4
+        var N = 1200;
+        var data = Array.apply(null, {
+                length: N
+            }).map(Number.call, Number)
+            //console.log(data)
+            // var img = new Image(date, 40, 40, 'firstPhoto')
+
+        function Image(data, height, width, name) {
+            this.data = data;
+            this.height = height;
+            this.width = width;
+            this.name = name;
+            this.pixelData = function (a, b) {
+                return this.data[a * width + b]
+
+            }
+        }
+        // pixelData = function(a, b) {
+        // 	a = a * width;
+        // 	b = b * height;
+        // 	this.data
+        // }
+
+        var img2 = new Image(data, 30, 40, 'firstPhoto');
+
+        img2.data
+        img2.name
+        img2.pixelData(29, 39)
+            // Ex 5
+            //WORK IN PROGRESS
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
