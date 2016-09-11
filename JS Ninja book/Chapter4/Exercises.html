@@ -21,54 +21,49 @@
 
     <script type="text/javascript">
     // Ex 1
+    function Makefibonacci( ){
+       this.recur = function(aNum){
+           if(aNum <= 2) {
+               return 1;
+           }
+           else {
+               return this.recur(aNum-1) + this.recur(aNum - 2)
+           }
+       };
+   }  
+    var firstFibo = new Makefibonacci();
+        
+    var doFibonacci = "";
+        for(var i = 1; i <=25; i++) {
+            doFibonacci += firstFibo.recur(i) + " ";
+        }
+        console.log(doFibonacci);
     // Ex 2
         
-function makeRecur(theArr) {
-    return theArr.length > 1 ? theArr.pop() + makeRecur(theArr) : theArr[0];
-}
+//function makeRecur(theArr) {
+//    return theArr.length > 1 ? theArr.pop() + makeRecur(theArr) : theArr[0];
+//}
+//
+//var theArr = [2, 4, 6, 8, 10, 12];
+//var total = makeRecur(theArr);
+//console.log(total);
+//        
+//    // Ex 3
+//    // Ex 4
 
-var theArr = [2, 4, 6, 8, 10, 12];
-var total = makeRecur(theArr);
-console.log(total);
-        
-    // Ex 3
-    // Ex 4
-        var x1 = 2, y1 = 4, z1= 6;
-var x2 = 4, y2 = 8, z2= 12;
-
-function distance() {
-	
-	return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2)) + Math.pow((z2-z1),2)
-	if (){ //Still needs to be verified and add overloading
-}
-}
-distance();
-        
-    // Ex 5
-        
-        function distance2() {
-    if ((arguments.length == 2) && (arguments[0].length == arguments[1].length)) {
-        sum = 0;
-        for (var i = 0; i < arguments[0].length - 1; i++) {
-            sum += Math.pow(arguments[0][i] - arguments[1][i], 2);
-            console.log(sum)
-            sum = Math.sqrt(sum);
-        }
-        return sum;
-    } else if (arguments.length == 4) {
-        return Math.sqrt(
-            Math.pow(arguments[0] - arguments[2], 2) + Math.pow(arguments[1] - arguments[3], 2)
-        );
-    } else if (arguments.length == 6) {
-        return Math.sqrt(
-            Math.pow(arguments[0] - arguments[3], 2) + Math.pow(arguments[1] - arguments[4], 2) + Math.pow(arguments[2] - arguments[5], 2)
-        );
-    } else
-        return "incompatible";
-}
-
-console.log(distance2(1, 2, 2, 2));
-console.log(distance2([1, 2], [2, 2, 4]));
+//        
+//    // Ex 5
+        //        var x1 = 2, y1 = 4, z1= 6;
+//var x2 = 4, y2 = 8, z2= 12;
+//
+//function distance() {
+//	
+//	return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2)) + Math.pow((z2-z1),2)
+//	if (){ //Still needs to be verified and add overloading
+//}
+//}
+//distance();
+    
 
     </script>
 
