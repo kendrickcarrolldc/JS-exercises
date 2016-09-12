@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Chapter 12 Ex
+    </title>
+    <meta charset="utf-8">
+
+
+</head>
+
+<body>
+
+    <div id='a' style="background-color: red;width: 100px;height:200px;" >
+        <div id='b'  style="background-color: black;width: 50px;height:100px;"></div>
+    </div>
+    <p id=’newP’ class=’square’ carl=’import’>
+    </p>
+<button>Click Me</button>
+    
+    
+    <script type="text/javascript">
+ 
+// Event click practice        
+        
+//    var btn = document.getElementsByTagName('button');
+//     
+//        
+//        btn.onclick = function(){
+//            return alert("I have been clicked")
+//        };
+     
+// Event listener/behavior practice      
+        var inner = document.getElementById('b');
+        var outer = document.getElementById('a');
+     
+    inner.addEventListener('click', innerListener);   
+    outer.addEventListener('click', outerListener);
+    
+    function innerListener(event) {
+        event.stopPropagation(); // the event object, then the method stopProgation stops the function from bubbling
+        console.log('clicked black');
+    }
+     function outerListener(event) {
+         event.stopPropagation();
+        console.log('clicked red');
+    }    
+    </script>
+
+
+
+   
+
+
+</body>
+
+</html>
