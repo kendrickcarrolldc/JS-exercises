@@ -40,7 +40,29 @@ console.log(range(1, 10))
 
 console.log(range(5, 2, -1));
 //            // Ex 2
-//          
+
+        function reverseArray(team) {
+ var placement = [];
+ for (var i = team.length - 1; i >=0; i--)
+ placement.push(team[i]);
+ return placement;
+	
+}
+
+function reverseArrayInPlace(array) {
+  for (var i = 0; i < Math.floor(array.length / 2); i++) {
+    var previous = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = previous;
+  }
+  return array;
+}
+
+console.log(reverseArray(['quarterback','linebacker','running back']));
+
+var realArray = [1, 2, 3, 4, 5];
+reverseArrayInPlace(realArray);
+realArray;
         // Ex 3
         
             
