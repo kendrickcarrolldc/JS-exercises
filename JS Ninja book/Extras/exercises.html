@@ -29,9 +29,44 @@ function doSorting() {
 doSorting();
         
         // 1.2
-        
-        
+      var nums = ['luis', 'anish', 'jaime', 'kendrick']
 
+function doSorting() {
+	nums.sort(function(a, b) {
+		return b.length - a.length; // Descending
+	})
+	return nums
+}
+doSorting();
+
+var nums = ['luis', 'anish', 'jaime', 'kendrick']
+
+function doSorting() {
+	nums.sort(function(a, b) {
+		return a.length - b.length; // Ascending, switching the function parameters
+	})
+	return nums
+}
+doSorting();  
+        
+// Ex 2
+       //having trouble with the call back
+        
+        var limitFunc = function (fn, num) {
+	var countFunc = 0
+	return function(){
+	if (countFunc < num){ 
+	return countFunc++ && fn() ||  'no more interations';
+
+	}
+	}
+};
+
+var limited = limitFunc(function() {
+	console.log(limited());
+}, 2);
+
+console.log(limited());
     </script>
 
 
