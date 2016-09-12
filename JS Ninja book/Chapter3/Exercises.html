@@ -71,7 +71,26 @@
         img2.name
         img2.pixelData(29, 39)
             // Ex 5
-            //WORK IN PROGRESS
+           function printAndroidDetails(test, check) {
+	var output = " ";
+	for (var property in kendrick){
+		if ((check!== true )|| (property !== eyes)) {
+		if(kendrick.hasOwnProperty(check)=== false){
+			output= output + ' '+property;
+		}
+		}
+	}
+	console.log(output);
+}
+Android.prototype.eyes = function () {
+	return this.name + this.age + this.sex;
+};
+var kendrick = new Android ('kendrick', 24, 'male', 'UI/UX Designer');
+
+
+printAndroidDetails(kendrick);
+printAndroidDetails(kendrick,false);
+printAndroidDetails(kendrick,true);
     </script>
 
 
