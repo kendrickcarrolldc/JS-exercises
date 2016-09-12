@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Chapter 12 Ex
+    </title>
+    <meta charset="utf-8">
+
+
+</head>
+
+<body>
+
+  
+
+    <script type="text/javascript">
+//        // Ex 1
+        function range(start, end, step) {
+  step === 1 || null;
+  var array = [];
+
+  if (step > 0) {
+    for (var i = start; i <= end; i += step)
+      array.push(i);
+  } else {
+    for (var i = start; i >= end; i += step)
+      array.push(i);
+  }
+  return array;
+}
+
+function sum(array) {
+  var total = 0;
+  for (var i = 0; i < array.length; i++)
+    total += array[i];
+  return total;
+}
+
+console.log(range(1, 10))
+
+console.log(range(5, 2, -1));
+//            // Ex 2
+//          
+        // Ex 3
+        
+            
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
