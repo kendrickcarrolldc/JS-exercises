@@ -6,7 +6,7 @@
     </title>
     <meta charset="utf-8">
 <style>
-.table { margin:1em auto; border-collapse:collapse }
+.table { margin:0em auto; border-collapse:collapse }
 .cell {
     cursor:pointer;
     width:30px; height:30px;
@@ -14,10 +14,8 @@
     text-align:center;
     font-family:sans-serif; font-size:13px
 }
-.table cell.clicked {
-    background-color:yellow;
-    font-weight:bold; color:red;
-}
+
+
     .row {
         display: inline-block;
         margin: 0 auto;
@@ -29,8 +27,8 @@
 </head>
 
 <body>
-
-    <div class="table">
+<p id="demo"></p>
+    <div class="table"> 
     <div class="row">
         <div class="cell">1</div>
         <div class="cell">2</div>
@@ -70,37 +68,51 @@
     
     
     <script type="text/javascript">
+        
+// Ex 1        
         var div = document.getElementsByTagName("div");
         var innerCell = document.getElementsByClassName("cell");
         var innerRow = document.getElementsByClassName("row")
-        var outer = document.getElementsByClassName("table");
+        var outer = document.getElementsByTagName('table');
+    var info = document.getElementById(info);
     
-    div.addEventListener('click', divListener);    
-    innerRow.addEventListener('click', rowListener);
-    outer.addEventListener('click', tableListener);
-    innerCell.addEventListener('click', cellListener);   
+        
+//        div.addEventListener('click', doClick);    
+//    innerRow.addEventListener('click', doClick);
+    outer.addEventListener('click', doClick);
+//    innerCell.addEventListener('click', cellListener);   
     
-    function divListener(event) {
+//    function divListener(event) {
+//   event.target.style.backgroundColor = 'yellow'; 
+//        event.target.
+//        console.log('clicked div');
+//    }    
+//    function rowListener(event) {
+//   
+//        console.log('clicked row');
+//    }    
+//        
+//    function cellListener(event) {
+//        event.stopPropagation(); // the event object, then the method stopProgation stops the function from bubbling
+//        console.log('clicked cell');
+//    }
+//     function tableListener(event) {
+//         
+//        console.log('clicked table');
+//    }    
+        
+     function doClick(event) {  //doClick event 
    event.target.style.backgroundColor = 'yellow'; 
-
-        console.log('clicked div');
-    }    
-    function rowListener(event) {
-   
-        console.log('clicked row');
-    }    
         
-    function cellListener(event) {
-        event.stopPropagation(); // the event object, then the method stopProgation stops the function from bubbling
-        console.log('clicked cell');
-    }
-     function tableListener(event) {
-         
-        console.log('clicked table');
-    }    
-        
-     console.log(div);   
-
+//        var info = document.getElementById(info);
+         demo.textContent = event.target.textContent;
+        console.log('clicked');
+         //        var info = document.getElementById(info);
+        }
+    } 
+    
+// Ex 2
+    
     </script>
 
 
