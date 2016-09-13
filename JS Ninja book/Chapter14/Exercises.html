@@ -5,27 +5,141 @@
       </title>
     <meta charset="utf-8">
  <link rel="stylesheet" href="css/style.css"/>
-<script>
-  var table = '';
-    var rows = ;
-    
-    for (var r = 0; r < rows.length; r++){
-        table + = '<tr>'; 
-       for (var c = 0 ; c < cols; c++) 
-       {
-           
-       }
-        table + = '</tr>';
-    }
-    
+      <style>
+         
+/* Ex 1 CSS
+          div {
+              background-color: slategrey;
+              position: relative;
+              width: 800px;
+              
+              height: 500px;
+              margin: 0 auto;
+              overflow: hidden;
+              clear: both;
+          }
+          table{
+              background-color: white;
+              width: 600px;
+              
+          }
+          tr {
+              background-color: black;
+          }
+          */ 
+          .classUno {
+              column-count: 1;
+          }
+          
+          .classDos {
+              column-count: 2;
+          }
+          
+          .classThres {
+              column-count: 3;
+          }
+          .classQuatro {
+              column-count: 4;
+          }
+          
+          
+      </style>
+      
+      <script>
+// EX 1 Script 
+          
+//function insertSomething() {
+//  var something = +document.getElementById("rows").value;
+//  for (var i = 0; i < something; i++) {
+//    document.getElementsByTagName("div").innerHTML[0] += 2;
+//  }
+//  
+//}
+          
+//          function inserting(){
+//              var rowCount = i;
+//              var table = document.getElementsByTagName('table');
+//              var rows = document.getElementById('rows');
+//              var startRow = document.createElement('<tr>')
+//              var endRow = document.createElement('</tr>')
+//                if (rows.value === 1){
+//                    table.innerHTML = table += '<tr>';
+//                    table += '</tr>';
+//                    return table;
+//                }
+////               var rows = 2;
+//    var cols = 3;
+//    
+//    for (var r = 0; r < rows; r++){
+//        table += '<tr>';
+//        
+//        table += '</tr>';
+//    }
+              
+//          }
+//          else {
+//              return 'Invalid entry'
+//          }
+          
+    // Ex 2
+          function greatDivide() {
+              var div = document.getElementsByIdName('para'); // grabs the div by Id name and sets it to a variable
+              var input = document.getElementsByClassName('Enter'); // gets the input field HTML and makes it a variable
+              var changeClass = 
+              if (input.value) // *NOT COMPLETE YET, but should validate the input value then execute a changing of class names
+          }
+          
       </script>
   </head>
 
     <body>
- 
+<!-- EX 1 HTML
+ <div>
+     <label>x</label>
+     <input type="text" id="rows">
+     <button onclick="inserting()">make</button>
+<br>
+        <label>y</label>
+     <input type="text" id="columns">
+     <button onclick="insertSomething()">make</button>
+<br>
+     <table>
+  
+</table>
+        </div>
+-->
         
+<!-- Ex 2 HTML-->
+     <label> Divide text:</label>
+        <input type="text" class="Enter">
+    <div id="para" class="classUno">
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.  
+        </div>    
         
         
 
           </body>
       </html>
+
+
+
+
+<!--
+//  var table = '';
+//    var rows = ;
+//    
+//    for (var r = 0; r < rows.length; r++){
+//        table + = '<tr>'; 
+//       for (var c = 0 ; c < cols; c++) 
+//       {
+//           
+//       }
+//        table + = '</tr>';
+//    }
+//    
+     -->
