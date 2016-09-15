@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> vox page sameple
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+// Constructor pattern
+        
+        
+var newObject = {};
+
+newObject.someKey = "Hello World";
+ 
+
+var value = newObject.someKey;
+value;
+
+var isNewObject = typeof newObject ;
+
+isNewObject;
+
+
+// Constructor pattern example
+
+ function Android(gender,name,mission) {
+            this.gender = gender;
+            this.name = name;
+            this.mission = mission;
+            }
+     Android.prototype.myMission = function(){ // any property you define on the prototype will be shared with all instances of the Android function
+                return "My mission is " + this.mission;
+                   
+            }
+        
+var androidOne = new Android("male", "Jimmy", "To learn javascript");
+ androidOne.myMission();
+ 
+var isAndroid = androidOne instanceof Android; // checks to see if androidOne is a object instance of android, and it should be true when you call it
+isAndroid; // should be true
+
+
+
+
+// Inheritance example using the same pattern above
+
+ function Android(gender,name,mission) {
+            this.gender = gender;
+            this.name = name;
+            this.mission = mission;
+            }
+     Android.prototype.myMission = function(){ // any property you define on the prototype will be shared with all instances of the Android function
+                return "My mission is " + this.mission;
+                   
+            }
+        
+var androidOne = new Android("male", "Jimmy", "To learn javascript");
+ androidOne.myMission();
+ 
+ 
+ function EvilAndroid(enemies) {
+ 	Android.call(this,"male", "X killer", "destroy all bad drivers"); //Android.call will allow me to use the Android functions properties
+ 	this.enemies = enemies;
+ 	
+ }
+ EvilAndroid.prototype = Object.create(Android.prototype); // sets up the prototype chain
+ 
+ EvilAndroid.prototype.doBadThings = function() { // this function as a prototype allow it to be used on object instances
+ 	return "this bad android named X killer, destroys " + this.enemies;
+ }
+ 	
+ var BadAndroid = new EvilAndroid("bad drivers");
+ BadAndroid.myMission();
+ BadAndroid.doBadThings();
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

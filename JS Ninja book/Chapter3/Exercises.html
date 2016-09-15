@@ -40,7 +40,35 @@
 
         add(3, 3, 3);
         // Ex 3
-            //WORK IN PROGRESS
+         var myMath = {
+          adding: function() {
+           		var add = 0;
+                for (var i =0; i < arguments.length; i++){
+                add = add + arguments[i];
+            }    
+            return add;
+           },
+           multiply: function() {
+           	var mult = 1;
+           	for(var i = 0; i < arguments.length; i++) {
+           	mult = mult * arguments[i];
+           	
+           	}
+           return mult;
+  			},
+  			fraction: function(n) {
+           	var frac = 2;
+           	for(i=2; i<=n; i++) {
+     		frac = frac*i;
+     		 }
+     		return frac;
+  			}
+  }
+  var a = myMath.adding(2,2,10);
+  var b = myMath.multiply(5)
+  var c = myMath.fraction(10);
+  
+  c;
         // Ex 4
         var N = 1200;
         var data = Array.apply(null, {
@@ -74,7 +102,7 @@
            function printAndroidDetails(test, check) {
 	var output = " ";
 	for (var property in kendrick){
-		if ((check!== true )|| (property !== eyes)) {
+		if ((check!== true )|| (property !== true)) {
 		if(kendrick.hasOwnProperty(check)=== false){
 			output= output + ' '+property;
 		}
@@ -82,7 +110,7 @@
 	}
 	console.log(output);
 }
-Android.prototype.eyes = function () {
+Android.prototype.getInfo = function () {
 	return this.name + this.age + this.sex;
 };
 var kendrick = new Android ('kendrick', 24, 'male', 'UI/UX Designer');
