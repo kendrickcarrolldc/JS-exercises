@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> Mixin pattern
+    <title> Extras
     </title>
     <meta charset="utf-8">
     <style>
@@ -23,44 +23,177 @@
 
 
     <script type="text/javascript">
-function extend(target) {
-	if (!arguments[1]) { // checks for second argument in extend invoking at bottom
-		return; // if not returns nothing
-	}
-	for (var ii = 0, ll = arguments.length; ii < ll; ii++) {
-		var source = arguments[ii];
-		
-		for (var prop in  source) {
-			if (!target[prop] && source.hasOwnProperty(prop)) {
-				target[prop] = source[prop];
-			}
+        //// Ex 1 
+        //        // 1.1
+        //        var nums = [10, 5, 6, 49, 8]
+        //
+        //function doSorting() {
+        //	nums.sort(function(a, b) {
+        //		return b - a;
+        //	})
+        //	return nums
+        //}
+        //doSorting();
+        //        
+        //        // 1.2
+        //      var nums = ['luis', 'anish', 'jaime', 'kendrick']
+        //
+        //function doSorting() {
+        //	nums.sort(function(a, b) {
+        //		return b.length - a.length; // Descending
+        //	})
+        //	return nums
+        //}
+        //doSorting();
+        //
+        //var nums = ['luis', 'anish', 'jaime', 'kendrick']
+        //
+        //function doSorting() {
+        //	nums.sort(function(a, b) {
+        //		return a.length - b.length; // Ascending, switching the function parameters
+        //	})
+        //	return nums
+        //}
+        //doSorting();  
+        //        
+        //// Ex 2
+        //       //having trouble with the call back
+        //        
+        //        var limitFunc = function (fn, num) {
+        //	var countFunc = 0
+        //	return function(){
+        //	if (countFunc < num){ 
+        //	return countFunc++ && fn() ||  'no more interations';
+        //
+        //	}
+        //	}
+        //};
+        //
+        //var limited = limitFunc(function() {
+        //	console.log(limited());
+        //}, 2);
+        //
+        //console.log(limited());
+        //        
+        // Ex 3
+        var div = document.getElementById('div');
+        var p = document.getElementsByClassName('para').textContent;
+
+        //div;
+        //
+        //
+        //function divAtrributes(color, fontsize, bg) {
+        //	var div = document.getElementById('div');
+        //	this.color = color,
+        //	this.fontsize = fontsize,
+        //	this.bg = bg
+        //	function changeColor(obj) {
+        //	div.style.backgroundColor = "green";
+        //	return div
+        //}
+        //return div
+        //}
+
+        changeColor = function (obj) {
+                div.style.backgroundColor = "green";
+                return div
+            }
+            //function changeFontSize(obj) {
+            //	
+            //		div.p.style.fontSize === 2em;
+            //	return div
+            //    }
+            //	
+            //	return div
+            //}
+        changeColor(div);
+        //addText(div);
+
+        //Ex 4
+        var cars = {
+	paint: "red",
+	headlights: true,
+	gas: "full"
+	
+}
+
+var motorcycle = {
+	paint: "blue",
+	headlights: true,
+	gas: "empty",
+	wheels: 2
+	
+}
+
+// var copy = {};
+
+function takeProps(source, destin) {
+	for (var prop in source) {
+		alert("prop = " +  prop)
+		alert('I have source' + source[prop])
+		if(destin[prop] !== source[prop])	{
+			source[prop] = destin[prop];
+			alert('I have destin ' + destin[prop]);
 		}
 	}
 }
 
+takeProps(motorcycle, cars);
 
-function Humans(sex) {
-	this.sex = sex;
+
+// copy.hasOwnProperty();
+motorcycle;
+        
+        // Ex 5.1
+        
+        var string = "Take allll my vowels away";
+
+
+function removeVowels(str) {
+	var string = "Take allll my vowels away";
+	 string = str.replace( /[aeiou]/g, '' );
+	 return str
+}
+function totalVowels(str) {
+	theVowels = str.match(/[aeiou]/g);
+	return theVowels.length;
+	
 }
 
-function Animals(sex) {
-	this.sex = sex;
-}
+console.log(totalVowels(string));  
+console.log(removeVowels(str));
+        
+    // 5.2 
+        
+        // Ex 6
 
-var reproduce = {
-	reproduce: function() {
-		return "this " + this.sex + " can reproduce.";
-	}
-}
-
-var willy = new Humans("male");
-var dog = new Animals("female");
-
-extend(Humans.prototype,reproduce);
-extend(Animals.prototype,reproduce);
-
-willy.reproduce();
-dog.reproduce();
+        //var tree = {
+        //     A :{
+        //        a :{
+        //            aa: "aa"
+        //        },
+        //         b:{
+        //          ba: "ba",
+        //          bb: "bb"
+        //        },
+        //        c:{
+        //            ca: "ca",
+        //          cb: { cba: "cba"	}
+        //        }
+        //            
+        //    }
+        //}
+        //function printTreeProps(obj) {
+        //    for (var key in obj){
+        //    console.log(key)
+        //    
+        //        if (typeof obj[key] == "object" && obj[key] !== null)
+        //            printTreeProps(obj[key]);
+        //        
+        //    }
+        //}
+        //
+        //printTreeProps(tree);
     </script>
 
 
