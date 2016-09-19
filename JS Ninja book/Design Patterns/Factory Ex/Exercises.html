@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Factory pattern
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+
+        
+//  Factory pattern ex
+        
+var shoes = function(color, style, size) {
+    var shoeBase = {};
+    
+    shoeBase.color = color;
+    shoeBase.style = style;
+    shoeBase.size = size
+    shoeBase.makeShoe = function() {
+        console.log ("Your new " + shoeBase.style + " shoes, in size " + shoeBase.size + " are ready. Would you like to place in cart?");
+    };
+    return shoeBase;
+}
+
+var freeRuns = shoeBase('black','running', 14);
+freeRuns.makeShoe();        
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
