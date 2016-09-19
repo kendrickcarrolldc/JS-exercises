@@ -2,110 +2,70 @@
 <html>
 
 <head>
-    <title> Chapter 12 Ex
+    <title> Mixin pattern
     </title>
     <meta charset="utf-8">
-
+    <style>
+        #div {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
 
 </head>
 
 <body>
 
-    
-    
-    
+    <div id='div'>
+        <p class ="para">Change my attributes</p>
+    </div>
+
+
+
     <script type="text/javascript">
- 
-//// Ex 1 
-//        // 1.1
-//        var nums = [10, 5, 6, 49, 8]
-//
-//function doSorting() {
-//	nums.sort(function(a, b) {
-//		return b - a;
-//	})
-//	return nums
-//}
-//doSorting();
-//        
-//        // 1.2
-//      var nums = ['luis', 'anish', 'jaime', 'kendrick']
-//
-//function doSorting() {
-//	nums.sort(function(a, b) {
-//		return b.length - a.length; // Descending
-//	})
-//	return nums
-//}
-//doSorting();
-//
-//var nums = ['luis', 'anish', 'jaime', 'kendrick']
-//
-//function doSorting() {
-//	nums.sort(function(a, b) {
-//		return a.length - b.length; // Ascending, switching the function parameters
-//	})
-//	return nums
-//}
-//doSorting();  
-//        
-//// Ex 2
-//       //having trouble with the call back
-//        
-//        var limitFunc = function (fn, num) {
-//	var countFunc = 0
-//	return function(){
-//	if (countFunc < num){ 
-//	return countFunc++ && fn() ||  'no more interations';
-//
-//	}
-//	}
-//};
-//
-//var limited = limitFunc(function() {
-//	console.log(limited());
-//}, 2);
-//
-//console.log(limited());
-//        
-// Ex 3
-        
-// Ex 6
-        
-var tree = {
-     A :{
-        a :{
-            aa: "aa"
-        },
-         b:{
-          ba: "ba",
-          bb: "bb"
-        },
-        c:{
-            ca: "ca",
-          cb: { cba: "cba"	}
-        }
-            
-    }
-}
-function printTreeProps(obj) {
-    for (var key in obj){
-    console.log(key)
-    
-        if (typeof obj[key] == "object" && obj[key] !== null)
-            printTreeProps(obj[key]);
-        
-    }
+function extend(target) {
+	if (!arguments[1]) { // checks for second argument in extend invoking at bottom
+		return; // if not returns nothing
+	}
+	for (var ii = 0, ll = arguments.length; ii < ll; ii++) {
+		var source = arguments[ii];
+		
+		for (var prop in  source) {
+			if (!target[prop] && source.hasOwnProperty(prop)) {
+				target[prop] = source[prop];
+			}
+		}
+	}
 }
 
-printTreeProps(tree);
 
-        
+function Humans(sex) {
+	this.sex = sex;
+}
+
+function Animals(sex) {
+	this.sex = sex;
+}
+
+var reproduce = {
+	reproduce: function() {
+		return "this " + this.sex + " can reproduce.";
+	}
+}
+
+var willy = new Humans("male");
+var dog = new Animals("female");
+
+extend(Humans.prototype,reproduce);
+extend(Animals.prototype,reproduce);
+
+willy.reproduce();
+dog.reproduce();
     </script>
 
 
 
-   
+
 
 
 </body>

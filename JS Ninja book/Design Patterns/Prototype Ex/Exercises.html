@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Prototype pattern
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+
+        
+//  Prototype pattern ex
+        
+function Phones() {
+    
+}
+    Phones.prototype.headphonejack =  1
+    Phones.prototype.waterproof = function() {
+       
+        return " This phone is water proof"
+    }
+        
+var Galaxy = new Phones();
+var Iphone7 = new Phones();
+    
+Iphone7.headphonejack = 0; // here I overroad the prototype property headphonejack but did not change it for other object instances
+        
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

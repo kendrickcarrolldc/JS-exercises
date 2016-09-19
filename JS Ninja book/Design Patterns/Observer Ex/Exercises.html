@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> vox page sameple
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+
+        
+//  Singleton pattern ex
+        
+var dom = (function () {
+    var _counter = 0;
+    var instance;
+
+    function generateId() {
+        return "customId" + _counter++;
+    }
+
+    function create(tagName, id) {
+        var el = document.createElement(tagName);
+
+        el.id = id || generateId();
+
+        return el;
+    }
+
+    function createInstance() { // this function belongs to the return below to create the object instance
+        return {
+            generateId: generateId,
+            create: create
+        };
+    }
+
+    return {
+        getInstance: function () {
+            return instance || (instance = createInstance());
+        }
+    };
+}());
+
+var el = dom.getInstance().create('div');
+var el2 = dom.getInstance().create('div');
+el.id;
+el2.id;
+        
+
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

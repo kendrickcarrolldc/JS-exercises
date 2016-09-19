@@ -11,12 +11,7 @@
 
 <body>
 
-    <div id=’a’ class=’square’ style="background-color: red;" val=’something important’>
-        ahgoagnoawnfklsngalkbnkn
-    </div>
-    <p id=’newP’ class=’square’ carl=’import’>
-    </p>
-    <button>Click Me</button>
+   
 
 
     <script type="text/javascript">
@@ -80,19 +75,46 @@ setIt("hey");
 
 //    // Ex 4
 
-//        
+function typeOfWhat() {
+      	for(var i=0; i <= arguments.length; i++) { // loops through the arguments length
+      		if((arguments[i] === /[0-9]/)) {
+      			console.log(typeof (arguments[i]));
+      		}
+      		else if(Array.isArray(arguments[i])) {
+      		console.log('array');
+      		}
+      		else {
+      		console.log(typeof (arguments[i]));
+      		}
+      	}
+      }
+      typeOfWhat(1, 6.2331, "pi*2",[2,1],{},  function(){});
+       
 //    // Ex 5
-        //        var x1 = 2, y1 = 4, z1= 6;
-//var x2 = 4, y2 = 8, z2= 12;
-//
-//function distance() {
-//	
-//	return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2)) + Math.pow((z2-z1),2)
-//	if (){ //Still needs to be verified and add overloading
-//}
-//}
-//distance();
-    
+var x1 = 2, y1 = 4, z1= 6;
+var x2 = 4, y2 = 8, z2= 12;
+
+function distance(values) {
+	
+	
+	if (arguments.length == 4) {
+        return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2))
+    }
+    if (arguments.length == 6) {
+        return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2)) + Math.pow((z2-z1),2)
+    } else
+        return ("Error, your arguments are less or greater than allowed");
+        
+}
+var distanceDos = distance(x1,x2,y1,y2);
+distance(x1,x2,y1,y2,z1,z2);
+distanceDos;
+distance(x1,x2,y1,y2,z1);
+distanceDos;
+ 
+// Ex 5
+
+    // WORK IN PROGRESS    
 
     </script>
 

@@ -11,10 +11,10 @@
 
 <body>
 
-    <div id=’a’ class=’square’ style="background-color: red;" val=’something important’>
+    <div id='a' class='square' style="background-color: red;" val='something important'>
         ahgoagnoawnfklsngalkbnkn
     </div>
-    <p id=’newP’ class=’square’ carl=’import’>
+    <p id='newP' class='square' carl='import'>
     </p>
 <button>Click Me</button>
     
@@ -22,36 +22,30 @@
     <script type="text/javascript">
         // // Ex 
 
+                
+         function printAttr(e,attr) {
+             for (var i = 0; i < attr.length; i++) {
+                 console.log(e.getAttribute(attr[i]));
+             }
+                 
+
+            
+
+         console.log(attr)   
+
+        }
+        var div = document.getElementsByTagName('div')[0];
+        var p = document.getElementsByTagName('p')[0];
+        printAttr(div,['id','class','style']);
+        printAttr(p,['id','class','carl']);
+    
         
-//function assert(value, desc) {
-//  var resultsList = document.getElementById("results");
-//  if (!resultsList) {
-//    resultsList = document.createElement('ul');
-//    document.getElementsByTagName('body')[0].appendChild(resultsList);
-//    resultsList.setAttribute('id','results');
-  
-        
-//         function printAttr(e,attr) {
-//             for (var i = 0; i < attr.length; i++) {
-//                 console.log(e.getAttribute(attr[i]));
-//             }
-//                 
-////            e.getAttribute(e)
-//            
-//
-//         console.log(attr)   
-//
-//        }
-//        var div = document.getElementsByTagName('div')[0];
-//        printAttr(div,['id','class','style']);
-//    
+//    var btn = document.getElementsByTagName('button');
+//     
 //        
-    var btn = document.getElementsByTagName('button');
-     
-        
-        btn.onclick = function (){
-            console.log("I have been clicked")
-        };
+//        btn.onclick = function (){
+//            console.log("I have been clicked")
+//        };
     </script>
 
 

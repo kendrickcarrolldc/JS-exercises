@@ -54,7 +54,47 @@ console.log(kendrick.tellMeAmount('246'));
         // Review closures and this, along with constructor functions
 
 // Ex 2
+  
+// Still having trouble with this one, understanding memoizaton
     
+var urbanTowers = {
+    floor1: {
+        room1: ["Micheal", "printers", "ink", "paper"],
+        room2: ["Wonder woman", "printers", "ink", "paper"],
+        room3: ["Kelly", "printers", "ink", "paper"]
+        },
+    
+    floor2: {
+        room1: ["Batman", "printers", "ink", "paper"],
+        room2: ["Booboo", "printers", "ink", "paper"],
+        room3: ["Mario", "printers", "ink", "paper"]
+        
+    },
+    
+    floor3: {
+        room1: ["Luis", "printers", "ink", "paper"],
+        room2: ["Sandra", "printers", "ink", "paper"],
+        room3: ["Goku", "printers", "ink", "paper"]
+        
+    }
+    
+   
+}    
+
+// Need help with memoization 
+
+var personInCharge = objt[prop][0];
+
+function checkFloor(objt) {
+    for (var prop in objt) {
+        return objt[prop]
+    }
+    
+}
+
+console.log(checkFloor(urbanTowers.floor2));
+
+personInCharge;
             
       </script>
   </head>

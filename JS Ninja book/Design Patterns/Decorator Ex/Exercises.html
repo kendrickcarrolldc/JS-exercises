@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Decorator Pattern
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+// Decorator pattern
+   function Tacos() {
+	
+}
+
+Tacos.prototype.meat = function() {
+	return "choose your meat";
+}
+
+Tacos.pork = function(tacoOrder) {
+	var meat = tacoOrder.meat();
+	
+	return "you have chosen pork for your tacos"
+}
+
+Tacos.chicken = function(tacoOrder) {
+	var meat = tacoOrder.meat();
+	
+	return "you have chosen chicken for your tacos"
+}
+
+Tacos.beef = function(tacoOrder) {
+	var meat = tacoOrder.meat();
+	
+	return "you have chosen beef for your tacos"
+}
+
+var tacos1 = new Tacos();
+
+Tacos.pork(tacos1);     
+        
+
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
