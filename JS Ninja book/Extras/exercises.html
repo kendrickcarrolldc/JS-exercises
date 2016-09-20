@@ -127,7 +127,7 @@ var motorcycle = {
 
 // var copy = {};
 
-function takeProps(source, destin) {
+function takeProps(source, destin, propert) {
 	for (var prop in source) {
 		alert("prop = " +  prop)
 		alert('I have source' + source[prop])
@@ -185,7 +185,7 @@ console.log(removeVowels(str));
         //}
         //function printTreeProps(obj) {
         //    for (var key in obj){
-        //    console.log(key)
+        //    console.log(key + " ")
         //    
         //        if (typeof obj[key] == "object" && obj[key] !== null)
         //            printTreeProps(obj[key]);

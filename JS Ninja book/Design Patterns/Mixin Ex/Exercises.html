@@ -13,43 +13,37 @@
     <script>
 
         
-//  Singleton pattern ex
+//  Mixin pattern 
         
-var dom = (function () {
-    var _counter = 0;
-    var instance;
+function Tacos() {
+	
+}
 
-    function generateId() {
-        return "customId" + _counter++;
-    }
+Tacos.prototype.meat = function() {
+	return "choose your meat";
+}
 
-    function create(tagName, id) {
-        var el = document.createElement(tagName);
+Tacos.pork = function(tacoOrder) {
+	var meat = tacoOrder.meat();
+	
+	return "you have chosen pork for your tacos"
+}
 
-        el.id = id || generateId();
+Tacos.chicken = function(tacoOrder) {
+	var meat = tacoOrder.meat();
+	
+	return "you have chosen chicken for your tacos"
+}
 
-        return el;
-    }
+Tacos.beef = function(tacoOrder) {
+	var meat = tacoOrder.meat();
+	
+	return "you have chosen beef for your tacos"
+}
 
-    function createInstance() { // this function belongs to the return below to create the object instance
-        return {
-            generateId: generateId,
-            create: create
-        };
-    }
+var tacos1 = new Tacos();
 
-    return {
-        getInstance: function () {
-            return instance || (instance = createInstance());
-        }
-    };
-}());
-
-var el = dom.getInstance().create('div');
-var el2 = dom.getInstance().create('div');
-el.id;
-el2.id;
-        
+Tacos.pork(tacos1);
 
         
     </script>
