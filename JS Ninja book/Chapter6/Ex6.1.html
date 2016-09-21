@@ -14,9 +14,9 @@
 //Constructor
 function Shape(){
 	this.pEdges=function(){
-		console.log(this.base, this.height)
+		console.log("You are accessing p edges")
 	}
-	this.fnDisplay=function(){
+	this.fnDisplay= function(){
 		console.log(this.name);
 	}
 }
@@ -40,35 +40,26 @@ function Square(name,base,height){
 	this.height=height;
 }
 
-Quadrilateral.prototype= new Shape();
-Square.prototype = new Quadrilateral("Square");
+Quadrilateral.prototype = new Shape();
+Square.prototype = new Quadrilateral();
 
 
 var sq1 = new Square("square 1",5,10);
-
+var triangle = new Shape();
 var trapezoid = new Quadrilateral();
 trapezoid.name="trapezoid 1"
+
+triangle.pEdges();
+Quadrilateral();
+sq1.pEdges();
+
             
       </script>
   </head>
 
     <body>
         
-    <header class="head">
-        <img src="images/KC%20LOGO.png"/>
-        </header>    
-        
-        <nav>
-            <ul>
-                <li a href="#">Home</li>
-                <li a href="#">About</li>
-                <li a href="#">Contact</li>
-                <li a href="#">Products</li>
-            
-            </ul>
-        </nav>
-        
-        
+ 
         
 
           </body>

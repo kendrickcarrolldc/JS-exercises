@@ -34,25 +34,62 @@
     
 // Ex 2
 
-var numero = {
-
-uno: function() {
-	return "call me first"
-	
+var timers = {
+  timerID: 0,
+  timers: [],
+ 
+  add: function(obj) {
+    this.timers.push(obj);
 },
+  start: function() {
+    if (this.timerID) 
+    return;
+    
+    var counter = 0;
+    (function runNext() {
 
-dos: function() {
- return	"no, call me first"
-},
-thres: function() {
-	
-	return ("WAIT, call ME first!")
-},
-
+ if (timers.timers.length > 0) {
+  for (var i = 0; i < timers.timers.length; i++) {
+    if (counter%timers.timers[i].interval === 0) {
+      timers.timers[i].fn();
+	} 
+  	
+  }
+	counter++
+  timers.timerID = setTimeout(runNext, 15000);
 }
-setInterval (numero.thres(), 30*1000);
-// setInterval (letsGo
-// , 30*1000);
+})(); 
+  	
+  },
+  stop: function() {
+    clearTimeout(this.timerID);
+    this.timerID = 0;
+	} 
+	
+};
+
+
+
+function a() {
+	console.log("trigger 30 secs");
+	return;
+}
+function b() {
+	console.log("trigger 1 min");
+	return;
+}
+
+function c() {
+	console.log("trigger 1 min 15s secs");
+	return;
+}
+
+timers.add({fn:a, interval: 2});
+timers.add({fn:b, interval: 4});
+timers.add({fn:c, interval: 5});
+
+timers.start();
+
 
 
             

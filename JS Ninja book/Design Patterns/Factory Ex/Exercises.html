@@ -15,20 +15,22 @@
         
 //  Factory pattern ex
         
-var shoes = function(color, style, size) {
-    var shoeBase = {};
-    
-    shoeBase.color = color;
-    shoeBase.style = style;
-    shoeBase.size = size
-    shoeBase.makeShoe = function() {
-        console.log ("Your new " + shoeBase.style + " shoes, in size " + shoeBase.size + " are ready. Would you like to place in cart?");
-    };
-    return shoeBase;
+var Dog = function() {
+	var bark = "woof woof";
+	
+	return {
+	  bark: function() { // since I am telling my constructor object to return the bark property all instances will have the bark property
+	  console.log(bark)
+	  }
+	  }
 }
 
-var freeRuns = shoeBase('black','running', 14);
-freeRuns.makeShoe();        
+
+var spot = new Dog();
+var spike = new Dog();
+spot.bark();
+spike.bark();
+
         
     </script>
 </head>

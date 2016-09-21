@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Revealing Module Pattern
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+// Revealing Module pattern
+        
+        
+var recycleBin = (function () {
+	
+	var cans = { // this objects cannot be accessed outsite of iife if not in the return value
+		id: "soda cans",
+	
+	}
+	
+	var plasticBottles = {
+		id: "water bottles"
+		
+	}
+ function putIn() {
+		console.log ("please recycle your cans");
+	}
+	return {
+		insideIs: cans.id + " and " + plasticBottles.id,
+		recyclePlease: function() {
+			putIn();
+		}
+};
+
+	
+})();
+
+recycleBin.recyclePlease();
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

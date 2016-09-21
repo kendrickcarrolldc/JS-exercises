@@ -11,56 +11,38 @@
     </style>
 
     <script>
-// Module pattern
+ Module pattern
         
         
-//var youtubeMyAccount = (function () {
-//	var favorites = [];
-//	return {
-//	addToFavorites: function(videos) {
-//	favorites.push(videos);
-//	},
-//	
-//	totalFavorites: function(){
-//		return favorites.length
-//	}
-//	
-//	}
-//})();
-//
-//
-//
-//youtubeMyAccount.addToFavorites({
-//	videoName: "IIFE Tutorials",
-//	views: 1134
-//});
-//
-//youtubeMyAccount.addToFavorites({
-//	videoName: "Best reading music",
-//	views: 344362
-//});
-//
-//youtubeMyAccount.totalFavorites();
-        
-//  Singleton pattern ex
-        
-var CircleGeneratorSingleton = (function(){
-    var instance;
-    
-    function init(){
-        
-        return {};
-    }
-    return {
-        getInstance: function( {
-            if(!instance){
-                instance = init();
-            }
-            
-            return instance;
-        }
-    }
+var youtubeMyAccount = (function () {
+	var favorites = [];
+	return {
+	addToFavorites: function(videos) {
+	favorites.push(videos);
+	},
+	
+	totalFavorites: function(){
+		return favorites.length
+	}
+	
+	}
 })();
+
+
+
+youtubeMyAccount.addToFavorites({
+	videoName: "IIFE Tutorials",
+	views: 1134
+});
+
+youtubeMyAccount.addToFavorites({
+	videoName: "Best reading music",
+	views: 344362
+});
+
+youtubeMyAccount.totalFavorites();
+        
+
         
     </script>
 </head>
