@@ -1,0 +1,1 @@
+With these exercises I practiced using regular expressions to test and read values. 

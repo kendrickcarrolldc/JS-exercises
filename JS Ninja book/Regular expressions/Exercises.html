@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Chapter 7
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+        // Ex 1
+
+        //
+        //        var hexToRGB = function (hex) {
+        //            var r, g, b;
+        //            var pattern = hex.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i); // checking or letters for digits by twos
+        //            if (pattern) { // this if statement takes the index value and radix
+        //                r = parseInt(pattern[1], 16);
+        //                g = parseInt(pattern[2], 16);
+        //                b = parseInt(pattern[3], 16);
+        //
+        //                console.log("rgb (" + r + "," + g + "," + b + ")");
+        //            }
+        //        }
+        //
+        //        hexToRGB("#9CCB3B");
+        //
+        //
+        //// Ex 2
+        //        var japaneseHolidays = {
+        //            "01/11": "Coming of age Day",
+        //            "01/01": "New Years",
+        //            "12/25": " Japanese Christmas"
+        //
+        //
+        //        };
+        //        var americanHolidays = {
+        //            "07/04": "July 4 / Independence day",
+        //            "12/25": "Christmas",
+        //            "01/01": "New Years"
+        //
+        //        };
+        //
+        //
+        //
+        //
+        //        (function whosHoliday(dates) {
+        //            var dateResults = /(\d{2})\/(\d{2})\/(\d{4})/.exec(dates);
+        //            var month = dateResults[1];
+        //            var day = dateResults[2];
+        //            var year = dateResults[3];
+        //            var aH = ' American Holidays: ' + month + "/" + day + "/" + year;
+        //            var jH = 'Japanese Holidays: ' + month + "/" + day + "/" + year;
+        //
+        //            function japanese(month, day) {
+        //                var key = month + "/" + day;
+        //                return japaneseHolidays.hasOwnProperty(key) ? "(" + japaneseHolidays[key] + ")" : "";
+        //            }
+        //
+        //            function american(month, day) {
+        //                var key = month + "/" + day;
+        //                return americanHolidays.hasOwnProperty(key) ? "(" + americanHolidays[key] + ")" : "";
+        //            }
+        //            return {
+        //                american: aH + american(month, day),
+        //                japanese: jH + japanese(month, day)
+        //            }
+        //        })("01/01/2016");
+
+
+
+        //Ex 3
+
+
+        //.abc
+        //a+b?!!1{4}
+        //.{3}a.b
+        //\w
+        //\s
+        //\d
+        //.
+        //[abc]
+        //(abc)
+        //[a­zA­Z_\$.]+[A­Za­z_\$0­9.]@[a­zA­Z_\$.]+[a­zA­Z_\$0­9.].(com|net|org){1}
+        //([0oOn]{1}(_|\s)[0oOn]{1})
+
+        //1.  1abc
+        //2. aab!!1111
+        //3. 999alb
+        //4. i am making words
+        //5. i  h a v e  w h i t e  space
+        //6. 1000000000000
+        //7. abc
+        //8. abc
+        //9. abc
+        //10. kendrickcarrolldc@gmail.com
+        //11. 0 0
+
+        //Ex 4
+
+        //1. \w*\s\..,\s\d{4} 
+        //2. [..a..] 
+        //3. [a-zA-Z]+.(java|txt|cpp)
+        //4. /(.)(.).\d\1/
+        //5. \b[b-yB-Y]*\b
+        //6. <(\w*)>(.*?)<\/\1>
+
+        //Ex 5
+
+        function noYolo() {
+            var a = document.getElementsByTagName('a');
+                if (a.textContent === "yolo") {
+                    a.textContent === "www.twitter.com"
+                }
+
+            var scrt_var = "https://twitter.com/";
+                document.getElementById("link").setAttribute("href", scrt_var);
+        }
+        noYolo();
+    </script>
+</head>
+
+<body>
+
+    <a id="link">yolo</a>
+
+
+</body>
+
+</html>
