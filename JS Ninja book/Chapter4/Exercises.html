@@ -94,27 +94,45 @@ function typeOfWhat() {
 var x1 = 2, y1 = 4, z1= 6;
 var x2 = 4, y2 = 8, z2= 12;
 
-function distance(values) {
+        function distance(values) {
 	
 	
-	if (arguments.length == 4) {
-        return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2))
+        if (arguments.length == 4) {
+            return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2))
+        }
+        if (arguments.length == 6) {
+            return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2)) + Math.pow((z2-z1),2)
+        } else
+            return ("Error, your arguments are less or greater than allowed");
+
     }
-    if (arguments.length == 6) {
-        return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2)) + Math.pow((z2-z1),2)
-    } else
-        return ("Error, your arguments are less or greater than allowed");
-        
-}
 var distanceDos = distance(x1,x2,y1,y2);
 distance(x1,x2,y1,y2,z1,z2);
 distanceDos;
 distance(x1,x2,y1,y2,z1);
 distanceDos;
+distance(x1,x2);
  
 // Ex 5
+function distanceDos() {
+	var other;
+   
+      if (arguments.length == 4) {
+        return Math.sqrt(
+            Math.pow(arguments[0] - arguments[2], 2) + Math.pow(arguments[1] - arguments[3], 2));
+    } 
+    else if (other =
+    arguments.lenth == 6 ?  Math.sqrt(
+            Math.pow(arguments[0] - arguments[3], 2) + Math.pow(arguments[1] - arguments[4], 2) + Math.pow(arguments[2] - arguments[5], 2)) :  "not valid") {
+            	return other
+            }
+            
 
-    // WORK IN PROGRESS    
+
+}
+console.log (distanceDos(2, 1, 2, 3));
+console.log (distanceDos([2, 5], [2, 5, 15]));
+ 
 
     </script>
 
