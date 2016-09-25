@@ -1,122 +1,137 @@
 <!doctype html>
 <html>
-  <head>
-    <title> vox page sameple
-      </title>
-    <meta charset="utf-8">
- <link rel="stylesheet" href="css/style.css"/>
-<script>
-  
-    // // Ex 1
 
-function Bank() {
-	var members = [];
-	this.createMember = function (name, amount, password) {
-		var newMember = {
-			name: name,
-			amount:amount
-		}
-		members.push(newMember);// since members is an arraw you can create more than 1 member and push them to members
-	function getAmount(key){
-		if (password===key){
-		return newMember.amount;
-	}
-	return 'wrong password';// return statement if the if statement is not met, and is put outside if statements brackets
-	}
-	function deposit(key, cash){
-		if (password===key){
-		newMember.amount += cash
-		return newMember.amount
-	}
-	return 'wrong password'; // return statement if the if statement is not met, and is put outside if statements brackets
-	}
-	function withdraw(key, cash){ // these parameters check to make when you call this function your arguments match up with its parameters
-		if(password===key){
-			newMember.amount -= cash // gets the amount from newMember and subtracts from it, depending on the cash amount
-			return newMember.amount;
-		}
-	return 'wrong password'; // return statement if the if statement is not met, and is put outside if statements brackets
-		
-	}
-	return { //these return statements are what needs to be access when calling my new member which is kendrick at the moment
-		tellMeAmount: getAmount,
-		depositAmount: deposit,
-		totalWithdrawn: withdraw
-	}
-}
-}
-var myBank = new Bank();
-var kendrick = myBank.createMember('Kendrick',1000,"246")
-console.log(kendrick.totalWithdrawn('246',200));
-console.log(kendrick.tellMeAmount('246'));
-    
-    // FINAL NOTES 
-        // Review closures and this, along with constructor functions
+<head>
+    <title> vox page sameple
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+        // // Ex 1
+
+        function Bank() {
+            var members = [];
+            this.createMember = function (name, amount, password) {
+                var newMember = {
+                    name: name,
+                    amount: amount
+                }
+                members.push(newMember); // since members is an arraw you can create more than 1 member and push them to members
+                function getAmount(key) {
+                    if (password === key) {
+                        return newMember.amount;
+                    }
+                    return 'wrong password'; // return statement if the if statement is not met, and is put outside if statements brackets
+                }
+
+                function deposit(key, cash) {
+                    if (password === key) {
+                        newMember.amount += cash
+                        return newMember.amount
+                    }
+                    return 'wrong password'; // return statement if the if statement is not met, and is put outside if statements brackets
+                }
+
+                function withdraw(key, cash) { // these parameters check to make when you call this function your arguments match up with its parameters
+                    if (password === key) {
+                        newMember.amount -= cash // gets the amount from newMember and subtracts from it, depending on the cash amount
+                        return newMember.amount;
+                    }
+                    return 'wrong password'; // return statement if the if statement is not met, and is put outside if statements brackets
+
+                }
+                return { //these return statements are what needs to be access when calling my new member which is kendrick at the moment
+                    tellMeAmount: getAmount,
+                    depositAmount: deposit,
+                    totalWithdrawn: withdraw
+                }
+            }
+        }
+        var myBank = new Bank();
+        var kendrick = myBank.createMember('Kendrick', 1000, "246")
+        console.log(kendrick.totalWithdrawn('246', 200));
+        console.log(kendrick.tellMeAmount('246'));
+
+  
 
 // Ex 2
-  
-// Still having trouble with this one, understanding memoizaton
-    
-var urbanTowers = {
-    floor1: {
-        room1: ["Micheal", "printers", "ink", "paper"],
-        room2: ["Wonder woman", "printers", "ink", "paper"],
-        room3: ["Kelly", "printers", "ink", "paper"]
-        },
-    
-    floor2: {
-        room1: ["Batman", "printers", "ink", "paper"],
-        room2: ["Booboo", "printers", "ink", "paper"],
-        room3: ["Mario", "printers", "ink", "paper"]
-        
-    },
-    
-    floor3: {
-        room1: ["Luis", "printers", "ink", "paper"],
-        room2: ["Sandra", "printers", "ink", "paper"],
-        room3: ["Goku", "printers", "ink", "paper"]
-        
-    }
-    
-   
-}    
 
-// Need help with memoization 
+        var urbanTowers = {
+                floor1: {
+                    room1: ["Micheal", "printers", "ink", "paper"],
+                    room2: ["Wonder woman", "printers", "ink", "paper"],
+                    room3: ["Kelly", "printers", "ink", "paper"]
+                },
 
-var personInCharge = objt[prop][0];
+                floor2: {
+                    room1: ["Batman", "printers", "ink", "paper"],
+                    room2: ["Booboo", "printers", "ink", "paper"],
+                    room3: ["Mario", "printers", "ink", "paper"]
 
-function checkFloor(objt) {
-    for (var prop in objt) {
-        return objt[prop]
-    }
-    
-}
+                },
 
-console.log(checkFloor(urbanTowers.floor2));
+                floor3: {
+                    room1: ["Luis", "printers", "ink", "paper"],
+                    room2: ["Sandra", "printers", "ink", "paper"],
+                    room3: ["Goku", "printers", "ink", "paper"]
 
-personInCharge;
-            
-      </script>
-  </head>
+                }
 
-    <body>
-        
-    <header class="head">
-        <img src="images/KC%20LOGO.png"/>
-        </header>    
-        
-        <nav>
-            <ul>
-                <li a href="#">Home</li>
-                <li a href="#">About</li>
-                <li a href="#">Contact</li>
-                <li a href="#">Products</li>
-            
-            </ul>
-        </nav>
-        
-        
-        
 
-          </body>
-      </html>
+            }
+            // memoization chap5 
+
+        Function.prototype.memoized = function (key) {
+            this._values = this._values || {};
+            console.log(this._values)
+            return this._values[key] !== undefined ?
+                this._values[key] :
+                this._values[key] = this.apply(this, arguments);
+        };
+
+        Function.prototype.memoize = function () {
+            var fn = this;
+            return function () {
+                return fn.memoized.apply(fn, arguments);
+            };
+        };
+
+
+        var searchBuilding = function (value, obj) {
+
+            var floor;
+            var itemList = [];
+
+            function findItems(obj, value) {
+                for (var key in obj) {
+                    if (Array.isArray(obj[key])) {
+                        var theRoom = key;
+                        for (var i = 0; i < obj[key].length; i++) {
+                            if (obj[key][i] == value) {
+                                itemList.push("This item is in " + theRoom + " of " + floor); // push item to item list
+                            }
+                        }
+
+                    } else if (typeof obj[key] == 'object') {
+                        floor = key
+                        findItems(obj[key], value)
+                    }
+                }
+            }
+            findItems(obj, value);
+            return itemList
+        }.memoize();
+
+        console.log(searchBuilding("Goku", urbanTowers))
+    </script>
+</head>
+
+<body>
+
+
+
+
+
+</body>
+
+</html>
