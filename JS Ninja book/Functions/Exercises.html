@@ -63,12 +63,12 @@
      		 }
      		return frac;
   			}
-  }
-  var a = myMath.adding(2,2,10);
-  var b = myMath.multiply(5)
-  var c = myMath.fraction(10);
+          }
+          var a = myMath.adding(2,2,10);
+          var b = myMath.multiply(5)
+          var c = myMath.fraction(10);
   
-  c;
+  
         // Ex 4
         var N = 1200;
         var data = Array.apply(null, {
@@ -99,26 +99,49 @@
         img2.name
         img2.pixelData(29, 39)
             // Ex 5
-           function printAndroidDetails(test, check) {
-	var output = " ";
-	for (var property in kendrick){
-		if ((check!== true )|| (property !== true)) {
-		if(kendrick.hasOwnProperty(check)=== false){
-			output= output + ' '+property;
-		}
-		}
-	}
-	console.log(output);
-}
-Android.prototype.getInfo = function () {
-	return this.name + this.age + this.sex;
-};
-var kendrick = new Android ('kendrick', 24, 'male', 'UI/UX Designer');
+        function Android (name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+
+         } 
+ 
+         Android.prototype.getInfo = function () {
+            return this.name + this.age + this.sex;
+        };
+
+         function printAndroidDetails(obj, check) {
+            var output = "";
+            var key;
+            if (!check) {
+                for (var key in obj) {
+                output = obj[key];
+                console.log(output);
+
+            }
+
+            }
+            else if (check){
+                  for (key in obj){
+                      if (obj.hasOwnProperty(key))
+
+                          console.log(key);
+        // 			
+                  }
+            }
 
 
-printAndroidDetails(kendrick);
-printAndroidDetails(kendrick,false);
-printAndroidDetails(kendrick,true);
+
+        }
+        Android.prototype.getInfo = function () {
+            return this.name + ' is ' + this.age + ', and is a ' + this.sex;
+        };
+        var kendrick = new Android ('kendrick', 24, 'male');
+
+
+        printAndroidDetails(kendrick);
+        printAndroidDetails(kendrick, false);
+        printAndroidDetails(kendrick,true);
     </script>
 
 

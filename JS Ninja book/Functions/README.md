@@ -1,0 +1,1 @@
+// In chapter 3 of ninja book, it goes over the fundamentals of functions. In these exercises I practice multiple principles of creating functions.
