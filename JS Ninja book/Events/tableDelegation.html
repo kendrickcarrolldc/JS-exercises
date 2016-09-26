@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Chapter 12 Ex
+    </title>
+    <meta charset="utf-8">
+    <style>
+        .table {
+            margin: 0em auto;
+            border-collapse: collapse
+        }
+        
+        .cell {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 13px
+        }
+        
+        .row {
+            display: inline-block;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p id="demo"></p>
+    <div id='table'>
+
+        <div class="cell">1</div>
+        <div class="cell">2</div>
+        <div class="cell">3</div>
+        <div class="cell">4</div>
+        <div class="cell">5</div>
+
+
+        <div class="cell">6</div>
+        <div class="cell">7</div>
+        <div class="cell">8</div>
+        <div class="cell">9</div>
+        <div class="cell">10</div>
+
+        <div class="cell">11</div>
+        <div class="cell">12</div>
+        <div class="cell">13</div>
+        <div class="cell">14</div>
+        <div class="cell">15</div>
+
+        <div class="cell">16</div>
+        <div class="cell">17</div>
+        <div class="cell">18</div>
+        <div class="cell">19</div>
+        <div class="cell">20</div>
+
+        <div class="cell">21</div>
+        <div class="cell">22</div>
+        <div class="cell">23</div>
+        <div class="cell">24</div>
+        <div class="cell">25</div>
+
+    </div>
+
+    <script>
+        var div = document.getElementById('table');
+        div.addEventListener('click', function (event) {
+            if (event.target.children) {
+                event.target.style.backgroundColor = 'blue';
+                var p = document.getElementById('demo');
+                p.innerHTML = event.target.innerText;
+
+            }
+        })
+    </script>
+
+
+
+
+
+</body>
+
+</html>

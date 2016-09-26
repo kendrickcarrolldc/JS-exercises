@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Chapter 12 Ex 2
+    </title>
+    <meta charset="utf-8">
+<style>
+
+    
+    
+</style>
+
+</head>
+
+<body>
+
+<!--    Ex 2 HTML-->
+    
+    <p>Display a gauge:</p>
+<meter value="0" min="0" max="3">2 out of 10</meter><br>
+
+<button id="button" onclick="fill">Click Me Now</button>
+    
+    <script type="text/javascript">
+        
+
+        
+   var btn = document.getElementsByTagName('button')[0];  
+    var meterFill = document.getElementsByTagName('meter')[0]; // this select first child of meter which is Value  
+        
+			btn.addEventListener('click',fill);
+	function fill(demo){
+		meterFill.value ++;
+		if(meterFill.value === 3 ){
+             alert('No more clicks available');
+		          removeEventListener('click', fill); // removes fill function from click handler
+            
+                
+            
+	}
+}
+
+    
+    </script>
+
+
+   
+
+
+</body>
+
+</html>
