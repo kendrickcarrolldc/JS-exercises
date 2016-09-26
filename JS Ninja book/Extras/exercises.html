@@ -17,15 +17,15 @@
 <body>
 
     <div id='div'>
-        <p class ="para">Change my attributes</p>
+        <p class="para">Change my attributes</p>
     </div>
 
 
 
     <script type="text/javascript">
         //// Ex 1 
-        //        // 1.1
-        //        var nums = [10, 5, 6, 49, 8]
+        // 1.1
+        // var nums = [10, 5, 6, 49, 8]
         //
         //function doSorting() {
         //	nums.sort(function(a, b) {
@@ -35,8 +35,8 @@
         //}
         //doSorting();
         //        
-        //        // 1.2
-        //      var nums = ['luis', 'anish', 'jaime', 'kendrick']
+        // 1.2
+        //var nums = ['luis', 'anish', 'jaime', 'kendrick']
         //
         //function doSorting() {
         //	nums.sort(function(a, b) {
@@ -55,7 +55,28 @@
         //	return nums
         //}
         //doSorting();  
-        //        
+        // 1.3 
+
+
+        var values = ['luis', 'anish', 'jaime', 'kendrick'];
+
+        function checkCons(obj) {
+            var count;
+            var consonants = /([bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ])/g;
+            count = obj.match(consonants);
+            return count.length;
+        }
+
+        function sort(values) {
+            console.log(values.sort(function (a, b) {
+                return checkCons(a) - checkCons(b);
+            }));
+            console.log(values.sort(function (a, b) {
+                return checkCons(b) - checkCons(a);
+            }));
+        }
+        sort(values);
+
         //// Ex 2
         //       //having trouble with the call back
         //        
@@ -111,60 +132,61 @@
 
         //Ex 4
         var cars = {
-	paint: "red",
-	headlights: true,
-	gas: "full"
-	
-}
+            paint: "red",
+            headlights: true,
+            gas: "full"
 
-var motorcycle = {
-	paint: "blue",
-	headlights: true,
-	gas: "empty",
-	wheels: 2
-	
-}
+        }
 
-// var copy = {};
+        var motorcycle = {
+            paint: "blue",
+            headlights: true,
+            gas: "empty",
+            wheels: 2
 
-function takeProps(source, destin, propert) {
-	for (var prop in source) {
-		alert("prop = " +  prop)
-		alert('I have source' + source[prop])
-		if(destin[prop] !== source[prop])	{
-			source[prop] = destin[prop];
-			alert('I have destin ' + destin[prop]);
-		}
-	}
-}
+        }
 
-takeProps(motorcycle, cars);
+        // var copy = {};
+
+        function takeProps(source, destin, propert) {
+            for (var prop in source) {
+                alert("prop = " + prop)
+                alert('I have source' + source[prop])
+                if (destin[prop] !== source[prop]) {
+                    source[prop] = destin[prop];
+                    alert('I have destin ' + destin[prop]);
+                }
+            }
+        }
+
+        takeProps(motorcycle, cars);
 
 
-// copy.hasOwnProperty();
-motorcycle;
-        
+        // copy.hasOwnProperty();
+        motorcycle;
+
         // Ex 5.1
-        
+
         var string = "Take allll my vowels away";
 
 
-function removeVowels(str) {
-	var string = "Take allll my vowels away";
-	 string = str.replace( /[aeiou]/g, '' );
-	 return str
-}
-function totalVowels(str) {
-	theVowels = str.match(/[aeiou]/g);
-	return theVowels.length;
-	
-}
+        function removeVowels(str) {
+            var string = "Take allll my vowels away";
+            string = str.replace(/[aeiou]/g, '');
+            return str
+        }
 
-console.log(totalVowels(string));  
-console.log(removeVowels(str));
-        
-    // 5.2 
-        
+        function totalVowels(str) {
+            theVowels = str.match(/[aeiou]/g);
+            return theVowels.length;
+
+        }
+
+        console.log(totalVowels(string));
+        console.log(removeVowels(str));
+
+        // 5.2 
+
         // Ex 6
 
         //var tree = {
