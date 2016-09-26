@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> vox page sameple
+    </title>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="css/style.css"/>-->
+    <style>
+        /* Ex 1 CSS*/
+        
+    #table {
+            border: 0px;
+            background-color: black;
+            box-sizing: border-box;
+        }
+        td {
+            width: 50px;
+            height: 50px; 
+            margin: 1px;
+            border: 1px solid black;
+            background-color: green;
+            
+        }
+        tr {
+            border: 1px solid black;
+            background-color: black;
+            
+        }
+        
+    </style>
+
+    </style>
+<body>
+        EX 1 HTML
+        <table id="table">
+        </table>
+        <form>
+            <input type="button" onclick="makeTable()" value="click to make">
+
+        </form>
+   
+    <script>
+        // EX 1 Script 
+
+
+
+        function makeTable() {
+
+            var r = window.prompt("how many rows", 1);
+            var c = window.prompt("how many columns", 1);
+
+            for (var i = 0; i < parseInt(r, 10); i++) {
+                var x = document.getElementById('table').insertRow(i);
+
+                for (var j = 0; j < parseInt(c, 10); j++) {
+                    var y = x.insertCell(j);
+
+                }
+            }
+        }
+    </script>
+</head>
+
+</body>
+
+   
+
+    </html>
+
+
+
+
+</body>
+
+</html>
