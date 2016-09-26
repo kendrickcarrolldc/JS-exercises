@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> vox page sameple
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+// Command pattern from class example "Currently reworking my own"
+        
+        
+function Shop(){
+	this.items=[];
+}
+ 
+Shop.prototype = {
+	
+	doShopping: function(name){
+		
+		if(name=='addToCart'|| name=='removeFromCart'){
+		
+		return	this[name](Array.prototype.slice.call(arguments,1));	
+			
+		}
+	},
+	addToCart: function(args){
+		for(var i=0; i< args.length; i++)
+		{
+			this.items.push(args[i]);
+			
+		}
+		return this.items;
+		
+	},
+	removeFromCart: function(item){
+		var remo;
+		for(var i=0; i<item.length; i++){
+			remo= this.items.indexOf(item[i]);	
+			this.items.splice(remo,1);
+		}
+		 return this.items;
+		 
+	}
+}
+
+var shop1 = new Shop();
+console.log(shop1.doShopping('addToCart','iphone', 'ipad','iwatch','ihop'));
+console.log(shop1.doShopping('removeFromCart', 'iphone', 'ihop'));
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

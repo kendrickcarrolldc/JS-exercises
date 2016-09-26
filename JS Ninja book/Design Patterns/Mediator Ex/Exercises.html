@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> vox page sameple
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+
+    </style>
+
+    <script>
+
+        
+//  Mediator pattern from class example 
+        
+var messages=document.getElementById('messages');
+var donInput=document.getElementById('dInput');
+var jaiInput=document.getElementById('jInput');
+var donButton=document.getElementById('dButt');
+var jaiButton=document.getElementById('jButt');
+
+function Participant(name){
+	this.name=name;
+	this.chatroom=null;
+}
+
+Participant.prototype.send=function(message,to){
+	this.chatroom.send(message,this,to);
+}
+
+Participant.prototype.receive=function(message,from){
+	var li = document.createElement('li');
+	li.className="message "+from.name;
+	li.innerText=from.name+" says: "+message;
+	messages.appendChild(li);
+	console.log(from.name,"says:",message);
+}
+
+function Chatroom(name){
+	this.participants={};
+	this.room=name
+}
+
+Chatroom.prototype.register=function(participant){
+	this.participants[participant.name]=participant;
+	participant.chatroom=this;
+}
+
+Chatroom.prototype.getList=function(){
+	console.log(Object.keys(this.participants));
+}
+
+Chatroom.prototype.send=function(message,from,to){
+	console.log(to.name)
+	this.participants[to.name].receive(message,from)
+}
+
+var ksquare = new Chatroom('ksquare');
+
+var donovan = new Participant('donovan');
+var jaime = new Participant('jaime');
+
+ksquare.register(donovan);
+ksquare.register(jaime);
+
+donButton.addEventListener('click',function(){
+	donovan.send(donInput.value,jaime)
+})
+
+
+jaiButton.addEventListener('click',function(){
+	jaime.send(jaiInput.value,donovan)
+})
+
+// donovan.send("Kill me",jaime)
+
+// jaime.send("Absolutely",donovan)
+
+// donovan.send("Thank You",jaime)
+// donovan.send("Kill me",jaime)
+
+// jaime.send("Absolutely",donovan)
+
+// donovan.send("Thank You",jaime)
+        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

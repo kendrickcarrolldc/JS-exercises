@@ -15,22 +15,27 @@
         
 //  Factory pattern ex
         
-var Dog = function() {
-	var bark = "woof woof";
+function AnimalFactory() {
+	// this.legs = 4;	
+	this.makeAnimals = function(options) {
+ 		if (options.kind === "cat")
+ 	  		return new Cat(options.color); 
+ 	  	else if (options.kind === "dog")
+ 	  		return new Dog(); 
+	}
 	
-	return {
-	  bark: function() { // since I am telling my constructor object to return the bark property all instances will have the bark property
-	  console.log(bark)
-	  }
-	  }
+}
+function Cat(color){
+	this.color = color;
+	
 }
 
+function Dog(type){
+	this.type = type;
+}
 
-var spot = new Dog();
-var spike = new Dog();
-spot.bark();
-spike.bark();
-
+var fact1 = new AnimalFactory();
+fact1.makeAnimals({kind:"cat", color: "black"})
         
     </script>
 </head>
