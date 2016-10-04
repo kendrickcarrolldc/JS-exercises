@@ -15,54 +15,34 @@
         
 //  Facade pattern ex
         
-function Supervisor1 () {
-	this.supervisors1Method1 = function () {
-		console.log(" I am supervisors1Method");
-	}
-		this.supervisors1Method2 = function () {
-		console.log(" this my second method");
-	}
-};
-
-
-
-function Supervisor2 () {
-	this.supervisors2Method1 = function () {
-		console.log( " I am supervisors2 first Method");
-	}
-		this.supervisors2Method2 = function () {
-	       console.log (" this my second method");
-	}
-};
-
-function Supervisor3 () {
-	this.supervisors3Method1 = function () {
-		console.log (" I am supervisors3 first Method");
-	}
-		this.supervisors3Method2 = function () {
-		  console.log( " this my second method");
-	}
-};
-
-function FacadeManager() {
-	this.supervisorOne = new Supervisor1();
-	this.supervisorTwo = new Supervisor2();
-	this.supervisorThree = new Supervisor3();
+var makeTacos = (function() {
+	var shell = "flour";
+	var shell2 = "corn";
 	
-	this.getFirstMethods = function() {
-		
-		
-		this.supervisorOne.supervisors1Method1()	;
-		this.supervisorTwo.supervisors2Method1()	;
-		this.supervisorThree.supervisors3Method1()	;
+	function tripitas(veggies, meatOnly){
+		return shell + meatOnly - veggies
+	}
+	
+	function steak(veggies, sauce){
+		return shell + veggies + sauce
+	}
+	
+	return {
+		make: function(veggies, sauce, meatOnly, order) {
+			switch (order) {
+				case meatOnly :
+					return  " I love tacos";
+					
+				case sauce :
+					return  " I love spicy tacos";
+			}
+		}
 	}
 	
 	
-};
+})();
 
-var facadeDoer = new FacadeManager();
-
-facadeDoer.getFirstMethods();
+console.log(makeTacos.make("pico de gallo", "spicy sauce"));
 
     </script>
 </head>

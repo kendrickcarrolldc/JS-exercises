@@ -16,12 +16,49 @@
 
 <body>
 
-        
+<input id ="string">        
 
     <script>
 
         
 //  Observer pattern ex
+			
+			function Subject(){
+	this.list=[];
+}
+
+Subject.prototype.add = function(value){
+	this.list.push(value);
+};
+Subject.prototype.notify = function(value){
+	console.log('i am here');
+	for(var i = 0; i < this.list.length; i++){
+		this.list[i].update();
+	}
+};
+
+function Observer(value){
+	this.update=null;
+}
+
+var newUpdate = new Subject();
+var observer1 = new Observer();
+var observer2 = new Observer();
+observer1.update = function(){
+	console.log('observer1 fired');
+};
+observer2.update = function (){
+	console.log('observer2 fired');
+};
+newUpdate.add(observer1);
+newUpdate.add(observer2);
+//newUpdate.notify();
+
+var el = document.getElementById('string');
+
+el.addEventListener('keyup',function(){
+	newUpdate.notify();
+});
 
 </script>
 </body>

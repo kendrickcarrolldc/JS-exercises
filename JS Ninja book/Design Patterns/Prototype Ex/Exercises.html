@@ -14,21 +14,24 @@
 
         
 //  Prototype pattern ex
-        
-function Phones() {
+function Phones(color, series) {
+	
+	this.color = color;
+	this.series = series
     
 }
-    Phones.prototype.headphonejack =  1
-    Phones.prototype.waterproof = function() {
+Phones.prototype.headphonejack =  1
+Phones.prototype.waterproof = function() {
        
         return " This phone is water proof"
     }
         
-var Galaxy = new Phones();
-var Iphone7 = new Phones();
-    
-Iphone7.headphonejack = 0; // here I overroad the prototype property headphonejack but did not change it for other object instances
-        
+var Galaxy = Object.create(Phones.prototype);
+			
+			
+Galaxy.series = "6";
+Galaxy.color = "metallic gray";		
+			console.log(Galaxy.waterproof());
         
     </script>
 </head>

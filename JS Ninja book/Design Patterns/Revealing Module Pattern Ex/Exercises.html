@@ -14,31 +14,31 @@
 // Revealing Module pattern
         
         
-var recycleBin = (function () {
+var rBin = (function () {
 	
-	var cans = { // this objects cannot be accessed outsite of iife if not in the return value
-		id: "soda cans",
+	var cans = 5;
 	
-	}
+	var plasticBottles = 3;
 	
-	var plasticBottles = {
-		id: "water bottles"
+	function recyclable(){
+		return cans;
 		
 	}
- function putIn() {
-		console.log ("please recycle your cans");
+		
+ function plasticOnly(noCans) {
+	 var noCans = ""
+	 cans = noCans;
+	 return cans;
+		
 	}
 	return {
-		insideIs: cans.id + " and " + plasticBottles.id,
-		recyclePlease: function() {
-			putIn();
+		priv: recyclable,
+		setPriv: plasticOnly 
 		}
-};
+
 
 	
 })();
-
-recycleBin.recyclePlease();
         
     </script>
 </head>
